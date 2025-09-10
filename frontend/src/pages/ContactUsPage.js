@@ -140,7 +140,7 @@ const ContactUsPage = () => {
   const handleSubmit = async (values) => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/send-email", {
+      const res = await fetch("https://api.lutonceramic.com/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
@@ -151,19 +151,19 @@ const ContactUsPage = () => {
       if (res.ok && data.success) {
         form.resetFields();
         modal.success({
-          title: "✅ Email Sent",
+          title: "Email Sent",
           content: "Your message has been sent successfully.",
         });
       } else {
         modal.error({
-          title: "❌ Email Failed",
+          title: "Email Failed",
           content: data.message || "Something went wrong, please try again.",
         });
       }
     } catch (err) {
       console.error("Request Error:", err);
       modal.error({
-        title: "⚠️ Error",
+        title: "Error",
         content: "Unable to send email. Please try again later.",
       });
     } finally {
@@ -339,7 +339,7 @@ const ContactUsPage = () => {
                 }}
                 allowFullScreen=""
                 loading="lazy"
-                title="Luton Ceramic Location"
+                title="Luton Ceramic Pvt. Ltd. Location"
               ></iframe>
             </motion.div>
           </Col>

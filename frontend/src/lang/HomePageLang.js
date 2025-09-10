@@ -1,6 +1,6 @@
 export const HomePageLang = {
   ABOUT_US: "ABOUT US",
-  ABOUT_SECTION_DESC_1: `Luton Ceramic is a leading manufacturer of Digital Parking tiles in Morbi — India’s ceramic hub. Combining
+  ABOUT_SECTION_DESC_1: `Luton Ceramic Pvt. Ltd. is a leading manufacturer of Digital Parking tiles in Morbi — India’s ceramic hub. Combining
                 state‑of‑the‑art production lines, advanced digital printing and
                 strict quality control. The ceramic industry has always been the most tradition-driven units of manufacturing. We at Luton thought something different and made the unit technology-intensive. we deliver a broad portfolio including
                 parking tiles, that meet international performance and finish
@@ -9,7 +9,7 @@ export const HomePageLang = {
                 invest in energy‑efficient kilns, water‑recycling systems and
                 continuous R&D to expand design range and improve durability.
                 With 1000+ designs, flexible finishing options and end‑to‑end
-                technical support, Luton Ceramic is trusted by architects,
+                technical support, Luton Ceramic Pvt. Ltd. is trusted by architects,
                 contractors and distributors across the Middle East, Africa,
                 South Asia and Latin America for consistent sizing, long‑lasting
                 colour and timely delivery.`,
@@ -20,14 +20,14 @@ export const HomePageLang = {
                 contemporary designs to classic aesthetics, our collections
                 cater to every taste and requirement.`,
   EXPLORE_OUR_COLLECTION: "Explore Our Collection",
-  WHAT_MAKES_US_BEST: "What Makes Luton Ceramic The Best Tile Supplier?",
+  WHAT_MAKES_US_BEST: "What Makes Luton Ceramic Pvt. Ltd. The Best Tile Supplier?",
   WHY_BEST_MESSAGE:"Below are some reasons that we think make us the best tiles suppliers.",
 
   DIGITAL_PARKING_TILES: "DIGITAL PARKING TILE EXPERTISE",
-  DIGITAL_PARKING_TILES_DESC: "Based in Morbi, Gujarat, Luton Ceramic specializes in the manufacturing and supply of digital parking tiles, including dimensions like 400 × 400 mm and 500x500 heavy-duty variants.",
+  DIGITAL_PARKING_TILES_DESC: "Based in Morbi, Gujarat, Luton Ceramic Pvt. Ltd. specializes in the manufacturing and supply of digital parking tiles, including dimensions like 400 × 400 mm and 500x500 heavy-duty variants.",
 
   GLOBAL_EXPORT_NETWORK: "GLOBAL EXPORT NETWORK",
-  GLOBAL_EXPORT_NETWORK_DESC: "Luton Ceramic exports its tiles to several countries, supported by a strong export infrastructure and international presence.",
+  GLOBAL_EXPORT_NETWORK_DESC: "Luton Ceramic Pvt. Ltd. exports its tiles to several countries, supported by a strong export infrastructure and international presence.",
 
   ROBUST_INFRASTRUCTURE: "ROBUST INFRASTRUCTURE",
   ROBUST_INFRASTRUCTURE_DESC: "The company maintains extensive logistics capabilities with nationwide warehouses, depots, and reliable transportation facilities.",
@@ -36,7 +36,7 @@ export const HomePageLang = {
   INNOVATION_QUALITY_CONTROL_DESC: "By focusing on research, advanced technology, and rigorous quality control, Luton produces durable and premium-quality tiles.",
 
   END_TO_END_SUPPORT: "END-TO-END SUPPORT",
-  END_TO_END_SUPPORT_DESC: "Luton Ceramic offers comprehensive support from product selection to after-sales service, ensuring customer satisfaction throughout the buying process.",
+  END_TO_END_SUPPORT_DESC: "Luton Ceramic Pvt. Ltd. offers comprehensive support from product selection to after-sales service, ensuring customer satisfaction throughout the buying process.",
 
   HAPPY_CLIENTS: "HAPPY CLIENTS",
   HAPPY_CLIENTS_COUNT: "500+",
@@ -51,7 +51,7 @@ export const HomePageLang = {
   SCHEDULE_YOUR_VISIT: "SCHEDULE YOUR VISIT",
 
   APPLICATION_AREAS_TITLE: "Application Areas",
-  APPLICATION_AREAS_DESC: "Luton Ceramic tiles are versatile and suitable for a wide range of applications, including residential, commercial, and outdoor spaces. Their durability and aesthetic appeal make them ideal for various settings.",
+  APPLICATION_AREAS_DESC: "Luton Ceramic Pvt. Ltd. tiles are versatile and suitable for a wide range of applications, including residential, commercial, and outdoor spaces. Their durability and aesthetic appeal make them ideal for various settings.",
   HOSPITAL: "Hospital",
   MALL: "Mall",
   OFFICE: "Office",

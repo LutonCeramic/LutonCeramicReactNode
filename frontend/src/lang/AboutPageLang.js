@@ -1,7 +1,7 @@
 export const AboutPageLang = {
     ABOUT_US: "ABOUT US",
 
-    ABOUT_DESC_1: "Established in 2014 at Morbi, Gujarat, Luton Ceramic blends traditional craftsmanship with cutting-edge automation. From digital parking tiles to vitrified selections, our products are created with meticulous attention to material science and finish.",
+    ABOUT_DESC_1: "Established in 2014 at Morbi, Gujarat, Luton Ceramic Pvt. Ltd. blends traditional craftsmanship with cutting-edge automation. From digital parking tiles to vitrified selections, our products are created with meticulous attention to material science and finish.",
     ABOUT_DESC_2: "As we grew, we invested heavily in precision kilns, automated handling, and quality analytics—delivering consistent surfaces engineered for everyday performance and long-term beauty.",
 
     COMPANY_PROFILE: "Company Profile",
@@ -14,10 +14,10 @@ export const AboutPageLang = {
     PRIDE_OF_INDIA_DESC: "Each of our products are entirely manufactured in India. This 'India First' ideology enables us to play our part in the nation's growth and contribute to its prosperity and development.",
 
     WHY_US: "WHY US!",
-    WHY_US_DESC: "Why Luton Ceramic is the best in the Digital Parking Tile manufacturing industry? Here are some reasons.",
+    WHY_US_DESC: "Why Luton Ceramic Pvt. Ltd. is the best in the Digital Parking Tile manufacturing industry? Here are some reasons.",
 
     OUR_INFRASTRUCTURE: "OUR INFRASTRUCTURE",
-    INFRASTRUCTURE_DESC: "Luton's Production Unit is equipped with state-of-the-art machinery and technology to ensure the highest quality ceramic blocks. Our facility is designed to optimize efficiency and sustainability, allowing us to meet the growing demands of the construction industry while minimizing our environmental impact.",
+    INFRASTRUCTURE_DESC: "Luton Ceramic Pvt. Ltd.'s Production Unit is equipped with state-of-the-art machinery and technology to ensure the highest quality ceramic blocks. Our facility is designed to optimize efficiency and sustainability, allowing us to meet the growing demands of the construction industry while minimizing our environmental impact.",
 
     TECHNICAL_SPECIFICATION: "TECHNICAL SPECIFICATION",
 

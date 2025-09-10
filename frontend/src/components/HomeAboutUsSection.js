@@ -11,54 +11,70 @@ const AboutLutonSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 64px 0 48px;
+  padding: 64px 20px 48px;
+
+  @media (max-width: 768px) {
+    padding: 48px 16px 32px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 12px 24px;
+  }
 `;
 
 const AboutLutonInner = styled.div`
   display: flex;
-  gap: 0;
+  flex-direction: row;
+  gap: 40px;
   background: transparent;
   max-width: 1200px;
   width: 100%;
+  align-items: center;
+
+  @media (max-width: 1024px) {
+    gap: 24px;
+  }
+
   @media (max-width: 900px) {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 `;
 
 const AboutImageWrap = styled.div`
   position: relative;
-  min-width: 380px;
+  width: 100%;
   max-width: 520px;
-  width: 45vw;
+  min-width: 320px;
+
   @media (max-width: 900px) {
-    width: 100vw;
-    min-width: unset;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     margin-bottom: 32px;
   }
 `;
 
 const AboutImage = styled.img`
   width: 100%;
-  height: 100%;
-  border-radius: 0;
+  height: auto;
   display: block;
+  border-radius: 0;
   position: relative;
   z-index: 2;
 `;
 
 const AboutContent = styled.div`
   flex: 1;
-  background: transparent;
-  padding: 0 0 0 48px;
+  padding-left: 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   @media (max-width: 900px) {
-    padding: 0 12px;
-    text-align: center;
+    padding: 0;
     align-items: center;
+    text-align: center;
   }
 `;
 
@@ -67,11 +83,12 @@ const AboutLabel = styled.div`
   color: #222;
   font-weight: 500;
   letter-spacing: 2px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   text-transform: uppercase;
   display: flex;
   align-items: center;
   gap: 12px;
+
   &:after {
     content: "";
     display: inline-block;
@@ -79,10 +96,11 @@ const AboutLabel = styled.div`
     height: 2px;
     background: #444;
     margin-left: 12px;
-    vertical-align: middle;
   }
+
   @media (max-width: 900px) {
     justify-content: center;
+
     &:after {
       display: none;
     }
@@ -95,34 +113,57 @@ const AboutTitle = styled.h2`
   color: rgb(36, 36, 34);
   margin-bottom: 18px;
   letter-spacing: 2px;
-  @media (max-width: 900px) {
+
+  @media (max-width: 1024px) {
+    font-size: 2.2rem;
+  }
+
+  @media (max-width: 768px) {
     font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
   }
 `;
 
 const AboutDesc = styled.p`
-  font-size: 1.18rem;
+  font-size: 1.125rem;
   color: #555;
   margin-bottom: 18px;
   line-height: 1.7;
   font-family: "Poppins", sans-serif;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+  }
 `;
 
 export const ExploreButton = styled.a`
   display: inline-block;
   padding: 12px 24px;
-  width: fit-content;
   background: #222;
   color: #fff;
   font-weight: 600;
   border-radius: 4px;
   margin-top: 16px;
   text-decoration: none;
-  transition: 0.2s;
+  transition: 0.2s ease-in-out;
+  white-space: nowrap;
 
   &:hover {
-    background:rgb(196, 191, 191);
+    background: rgb(196, 191, 191);
     color: #000000;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    text-align: center;
+    white-space: normal;
   }
 `;
 
@@ -133,34 +174,34 @@ const fadeIn = {
 
 const HomeAboutUsSection = () => {
   return (
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeIn}
-      >
-        <AboutLutonSection>
-          <AboutLutonInner>
-            <AboutImageWrap>
-              <AboutImage
-                src={HOME_ABOUT_US_IMG}
-                alt="Luton Ceramic Outdoor"
-              />
-            </AboutImageWrap>
-            <AboutContent>
-              <AboutLabel>{HomePageLang.ABOUT_US}</AboutLabel>
-              <AboutTitle>{CommonLang.LUTON_CERAMIC}</AboutTitle>
-              <AboutDesc>
-                {HomePageLang.ABOUT_SECTION_DESC_1}
-                <br />
-                <br />
-                {HomePageLang.ABOUT_SECTION_DESC_2}
-              </AboutDesc>
-              <ExploreButton href="#">{HomePageLang.EXPLORE_MORE}</ExploreButton>
-            </AboutContent>
-          </AboutLutonInner>
-        </AboutLutonSection>
-      </motion.div>
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+    >
+      <AboutLutonSection>
+        <AboutLutonInner>
+          <AboutImageWrap>
+            <AboutImage
+              src={HOME_ABOUT_US_IMG}
+              alt="Luton Ceramic Pvt. Ltd. Outdoor"
+            />
+          </AboutImageWrap>
+          <AboutContent>
+            <AboutLabel>{HomePageLang.ABOUT_US}</AboutLabel>
+            <AboutTitle>{CommonLang.LUTON_CERAMIC}</AboutTitle>
+            <AboutDesc>
+              {HomePageLang.ABOUT_SECTION_DESC_1}
+              <br />
+              <br />
+              {HomePageLang.ABOUT_SECTION_DESC_2}
+            </AboutDesc>
+            <ExploreButton href="#">{HomePageLang.EXPLORE_MORE}</ExploreButton>
+          </AboutContent>
+        </AboutLutonInner>
+      </AboutLutonSection>
+    </motion.div>
   );
 };
 

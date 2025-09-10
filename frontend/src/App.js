@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Layout } from 'antd';
 import HeaderPanel from './commons/HeaderPanel';
 import Footer from './commons/Footer';
 import RoutePath from './Routes/RoutePath';
 import styled from 'styled-components';
 import { WhatsAppOutlined, PhoneOutlined } from "@ant-design/icons";
+import { useLocation } from 'react-router-dom';
 
 const { Content } = Layout;
+
+/* ===== ScrollToTop Component ===== */
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" }); // 👈 change to "smooth" if you prefer
+  }, [pathname]);
+
+  return null;
+};
 
 const StyledContent = styled(Content)`
   margin-top: 120px;
@@ -46,6 +58,7 @@ const FloatBtn = styled.a`
 const App = () => {
   return (
     <Layout>
+      <ScrollToTop /> {/* 👈 Added here */}
       <HeaderPanel />
       <StyledContent>
         <RoutePath />

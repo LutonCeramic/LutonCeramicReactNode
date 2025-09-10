@@ -152,7 +152,7 @@ const HomeInfrastructure = () => {
             </ExploreButton>
           </AboutContent>
           <AboutImageWrap>
-            <AboutImage src={INFRASTRUCTURE_IMAGES} alt="Luton Ceramic Infrastructure" />
+            <AboutImage src={INFRASTRUCTURE_IMAGES} alt="Luton Ceramic Pvt. Ltd. Infrastructure" />
           </AboutImageWrap>
         </AboutLutonInner>
       </AboutLutonSection>

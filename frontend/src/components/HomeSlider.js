@@ -165,6 +165,17 @@ const SlideContent = styled(motion.div)`
     }
     .buttons button {
       width: 100%;
+      white-space: normal; /* Allow text to wrap */
+      word-wrap: break-word;
+      font-size: 14px;
+      padding: 12px 16px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .buttons button {
+      font-size: 13px;
+      padding: 10px 12px;
     }
   }
 `;

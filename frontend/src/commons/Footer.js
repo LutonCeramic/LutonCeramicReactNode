@@ -254,7 +254,7 @@ const Footer = () => {
             <FooterSection>
               <CompanyLogo>
                 <a href="/">
-                  <img src="./logo.png" height="50" width="50" alt="Luton Ceramic" />
+                  <img src="./logo.png" height="50" width="50" alt="Luton Ceramic Pvt. Ltd." />
                 </a>
               </CompanyLogo>
               <p style={{ color: "rgba(255, 255, 255, 0.8)", lineHeight: "1.6", marginBottom: "20px", fontSize: "1rem" }}>
