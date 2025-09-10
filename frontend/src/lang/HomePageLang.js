@@ -77,4 +77,7 @@ export const HomePageLang = {
   GLOBAL_NETWORK: "Global Network",
   COLLECTION: "Collection",
   CATALOUGE: "Catalogue",
+
+  DOWNLOAD_CATALOGUE: "Download E - Catalogue",
+  VISIT_PRODUCT_CATALOGUE: "Visit Product Catalogue",
 };

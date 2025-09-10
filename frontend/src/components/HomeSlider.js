@@ -5,6 +5,7 @@ import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
 import { SLIDES } from "../config/Constant";
 import { map } from "lodash";
+import { HomePageLang } from "../lang/HomePageLang";
 
 // Ken Burns zoom in/out animation
 const kenBurns = keyframes`
@@ -215,17 +216,15 @@ const HomeSlider = () => {
                     size="large"
                     onClick={() => window.open(item.downloadLink, "_blank", "noopener,noreferrer")}
                   >
-                    Download E-Catalogue
+                    {HomePageLang.DOWNLOAD_CATALOGUE}
                   </Button>
                 )}
                 {item.productLink && (
-                  <Button
-                    className="secondary-btn"
-                    size="large"
-                    onClick={() => window.open(item.productLink, "_blank", "noopener,noreferrer")}
-                  >
-                    Visit Product Catalogue
-                  </Button>
+                  <a href={item.productLink}>
+                    <Button className="secondary-btn" size="large">
+                      {HomePageLang.VISIT_PRODUCT_CATALOGUE}
+                    </Button>
+                  </a>
                 )}
               </div>
             </SlideContent>
