@@ -1259,27 +1259,27 @@ export const SLIDES = [
     bottomLeftTitle: "WE ARE MANUFACTURING",
     bottomLeftSubtitle: "Heavy Duty Virtified Digital Parking Tiles 400x400 mm & 500x500 mm",
     downloadLink: "/catalogues/E_CATALOGUE_13_06_2025.pdf",
-    productLink: routeConstant.CATALOGUE_400X400
+    productLink: routeConstant.CATALOGUE_400X400,
   },
   {
     img: "/slider/slider2.jpg",
     bottomLeftTitle: "Global Export",
     bottomLeftSubtitle: "Reaching every corner of the world",
     downloadLink: "/catalogues/E_CATALOGUE_13_06_2025.pdf",
-    productLink: routeConstant.CATALOGUE_400X400
+    productLink: routeConstant.CATALOGUE_400X400,
   },
   {
     img: "/slider/slider10.jpg",
     bottomLeftTitle: "Premium Quality",
     bottomLeftSubtitle: "Top-notch materials and craftsmanship",
     downloadLink: "/catalogues/E_CATALOGUE_13_06_2025.pdf",
-    productLink: "/products/global-export"
+    productLink: routeConstant.CATALOGUE_400X400,
   },
   {
     img: "/slider/slider4.jpg",
     bottomLeftTitle: "Sustainable Innovation",
     bottomLeftSubtitle: "Eco-friendly and efficient solutions",
     downloadLink: "/catalogues/E_CATALOGUE_13_06_2025.pdf",
-    productLink: "/products/premium-quality"
+    productLink: routeConstant.CATALOGUE_400X400,
   }
 ];
