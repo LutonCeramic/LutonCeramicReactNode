@@ -13,8 +13,8 @@ const fadeIn = {
 const ApplicationWrapper = styled(motion.section)`
   width: 100%;
   background-color: #ffffff;
-  padding: 100px 24px;
-  margin-top: 100px;
+  padding: 80px 20px;
+  margin-top: 80px;
   display: flex;
   justify-content: center;
 `;
@@ -27,10 +27,11 @@ const ApplicationContainer = styled.div`
   gap: 48px;
   align-items: flex-start;
 
-  @media (max-width: 900px) {
-    flex-direction: column;
+  @media (max-width: 992px) {
+    flex-direction: column-reverse;
     align-items: center;
     text-align: center;
+    gap: 32px;
   }
 `;
 
@@ -51,15 +52,30 @@ const LeftContent = styled.div`
     z-index: 0;
     opacity: 0.6;
   }
+
+  @media (max-width: 992px) {
+    &::before {
+      display: none;
+    }
+  }
 `;
 
 const Title = styled.h2`
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   color: #222;
   font-weight: 700;
   letter-spacing: 1px;
   z-index: 1;
   position: relative;
+  margin-bottom: 16px;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const Subtitle = styled.p`
@@ -69,6 +85,14 @@ const Subtitle = styled.p`
   line-height: 1.7;
   z-index: 1;
   position: relative;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+  }
 `;
 
 const RightGrid = styled.div`
@@ -78,14 +102,19 @@ const RightGrid = styled.div`
   gap: 24px;
   min-width: 280px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 992px) {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
   }
 `;
 
 const GridItem = styled.div`
-  background:rgb(226, 224, 224);
+  background: rgb(245, 245, 245);
   padding: 24px;
+  border-radius: 12px;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -98,6 +127,10 @@ const GridItem = styled.div`
   img {
     height: 48px;
     margin-bottom: 12px;
+
+    @media (max-width: 480px) {
+      height: 40px;
+    }
   }
 
   p {
@@ -105,9 +138,12 @@ const GridItem = styled.div`
     color: #222;
     font-size: 1rem;
     margin: 0;
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+    }
   }
 `;
-
 
 const HomeApplicationArea = () => {
   return (
@@ -118,6 +154,7 @@ const HomeApplicationArea = () => {
       variants={fadeIn}
     >
       <ApplicationContainer>
+        {/* Right side grid */}
         <RightGrid>
           {map(APPLICATION_AREAS, (item, index) => (
             <GridItem key={index}>
@@ -127,11 +164,10 @@ const HomeApplicationArea = () => {
           ))}
         </RightGrid>
 
+        {/* Left side content */}
         <LeftContent>
           <Title>{HomePageLang.APPLICATION_AREAS_TITLE}</Title>
-          <Subtitle>
-            {HomePageLang.APPLICATION_AREAS_DESC}
-          </Subtitle>
+          <Subtitle>{HomePageLang.APPLICATION_AREAS_DESC}</Subtitle>
         </LeftContent>
       </ApplicationContainer>
     </ApplicationWrapper>

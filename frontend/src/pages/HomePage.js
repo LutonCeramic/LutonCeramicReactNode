@@ -19,26 +19,6 @@ const PageWrapper = styled.div`
   overflow-x: hidden;
 `;
 
-// Common responsive container
-const SectionWrapper = styled.section`
-  width: 100%;
-  max-width: 1280px; /* keeps sections centered */
-  margin: 0 auto;
-  padding: 60px 20px;
-
-  @media (max-width: 1024px) {
-    padding: 50px 16px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 40px 14px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 30px 12px;
-  }
-`;
-
 const HomePage = () => {
   React.useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
@@ -53,49 +33,31 @@ const HomePage = () => {
       <HomeSlider />
 
       {/* About Luton Ceramic Block */}
-      <SectionWrapper>
-        <HomeAboutUsSection />
-      </SectionWrapper>
+      <HomeAboutUsSection />
 
       {/* Explore Our Collection Block */}
-      <SectionWrapper>
-        <HomeExploreCollection />
-      </SectionWrapper>
+      <HomeExploreCollection />
 
       {/* WHY CHOOSE US Section */}
-      <SectionWrapper>
-        <HomeWhyUs />
-      </SectionWrapper>
+      <HomeWhyUs />
 
       {/* Application Areas Section */}
-      <SectionWrapper>
-        <HomeApplicationArea />
-      </SectionWrapper>
+      <HomeApplicationArea />
 
       {/* Infrastructure Section */}
-      <SectionWrapper>
-        <HomeInfrastructure />
-      </SectionWrapper>
+      <HomeInfrastructure />
 
       {/* Banner + Stats Block */}
-      <SectionWrapper>
-        <HomeCountSection />
-      </SectionWrapper>
+      <HomeCountSection />
 
       {/* Visit us Section */}
-      <SectionWrapper>
-        <HomeVisitUs />
-      </SectionWrapper>
+      <HomeVisitUs />
 
       {/* Export Network */}
-      <SectionWrapper>
-        <HomeExportBlock />
-      </SectionWrapper>
+      <HomeExportBlock />
 
       {/* Avidance Section */}
-      <SectionWrapper>
-        <HomeAvidanceSection />
-      </SectionWrapper>
+      <HomeAvidanceSection />
     </PageWrapper>
   );
 };

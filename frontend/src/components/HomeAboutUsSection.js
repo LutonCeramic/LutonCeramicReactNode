@@ -52,6 +52,7 @@ const AboutImageWrap = styled.div`
     width: 100%;
     max-width: 100%;
     margin-bottom: 32px;
+    order: 2; /* 👈 Image appears after text */
   }
 `;
 
@@ -75,6 +76,7 @@ const AboutContent = styled.div`
     padding: 0;
     align-items: center;
     text-align: center;
+    order: 1; /* 👈 Content appears before image */
   }
 `;
 
@@ -148,6 +150,10 @@ export const ExploreButton = styled.a`
   padding: 12px 24px;
   background: #222;
   color: #fff;
+  align-items: center;
+  font-size: 1rem;
+  justify-content: center;
+  text-align: center;
   font-weight: 600;
   border-radius: 4px;
   margin-top: 16px;
