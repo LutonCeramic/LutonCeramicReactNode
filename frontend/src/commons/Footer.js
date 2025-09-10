@@ -1,3 +1,4 @@
+// src/components/Footer.js
 import React from "react";
 import { Row, Col } from "antd";
 import styled from "styled-components";
@@ -13,12 +14,14 @@ import {
 import { Link } from "react-router-dom";
 import { HeaderLang } from "../lang/HeaderLang";
 import { routeConstant } from "../config/routeConstant";
-import { ContactInfo, StyledIcon } from "./TopHeader";
 import { map } from "lodash";
 
+// Styled Components
 const FooterContainer = styled.footer`
-  background: linear-gradient(135deg, #050c13ff, #0a1118ff);
+  background: linear-gradient(135deg, #050c13, #0a1118);
   color: white;
+  font-family: "Poppins", sans-serif;
+  padding: 100px 50px 50px;
   position: relative;
   overflow: hidden;
 
@@ -28,46 +31,42 @@ const FooterContainer = styled.footer`
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 5px;
     background: linear-gradient(135deg, #4a90e2, #357abd);
   }
-`;
-
-const FooterContent = styled.div`
-  padding: 80px 50px 40px;
-  position: relative;
-  z-index: 2;
 
   @media (max-width: 768px) {
-    padding: 60px 20px 30px;
+    padding: 80px 20px 40px;
   }
 `;
 
 const FooterSection = styled(motion.div)`
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 
   @media (max-width: 768px) {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     text-align: center;
   }
 `;
 
 const SectionTitle = styled.h3`
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 800;
   margin-bottom: 25px;
-  color: white;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
   position: relative;
 
   &::after {
     content: "";
     position: absolute;
-    bottom: -8px;
+    bottom: -10px;
     left: 0;
-    width: 40px;
-    height: 3px;
+    width: 50px;
+    height: 4px;
     background: linear-gradient(135deg, #4a90e2, #357abd);
-    border-radius: 2px;
+    border-radius: 3px;
 
     @media (max-width: 768px) {
       left: 50%;
@@ -76,14 +75,21 @@ const SectionTitle = styled.h3`
   }
 `;
 
-const CompanyLogo = styled.div`
+const CompanyLogo = styled(motion.div)`
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  cursor: pointer;
 
   img {
     max-width: 100%;
     height: auto;
+    border-radius: 12px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    &:hover {
+      transform: scale(1.1) rotate(-3deg);
+      box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
+    }
   }
 
   @media (max-width: 768px) {
@@ -97,18 +103,22 @@ const ContactItem = styled.div`
   margin-bottom: 15px;
   color: rgba(255, 255, 255, 0.9);
   font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 
   .anticon {
     color: #4a90e2;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-right: 12px;
-    width: 20px;
+    width: 25px;
+    transition: all 0.3s ease;
   }
 
   &:hover {
-    color: white;
+    color: #ffffff;
     .anticon {
       color: #357abd;
+      transform: scale(1.2);
     }
   }
 
@@ -120,15 +130,17 @@ const ContactItem = styled.div`
 
 const QuickLink = styled(Link)`
   display: block;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   margin-bottom: 12px;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  transition: all 0.4s ease;
+  letter-spacing: 0.5px;
 
   &:hover {
     color: #4a90e2;
-    padding-left: 10px;
+    transform: translateX(5px);
   }
 
   @media (max-width: 768px) {
@@ -136,23 +148,7 @@ const QuickLink = styled(Link)`
   }
 `;
 
-const ProductLink = styled(Link)`
-  display: block;
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  margin-bottom: 12px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-
-  &:hover {
-    color: #4a90e2;
-    padding-left: 10px;
-  }
-
-  @media (max-width: 768px) {
-    padding-left: 0 !important;
-  }
-`;
+const ProductLink = styled(QuickLink)``;
 
 const SocialLinks = styled.div`
   display: flex;
@@ -164,7 +160,7 @@ const SocialLinks = styled.div`
   }
 `;
 
-const SocialIcon = styled.a`
+const SocialIcon = styled(motion.a)`
   width: 45px;
   height: 45px;
   border-radius: 12px;
@@ -172,63 +168,91 @@ const SocialIcon = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 1.2rem;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 
   &:hover {
     background: linear-gradient(135deg, #4a90e2, #357abd);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+    color: #ffffff;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
   }
 `;
 
 const BottomBar = styled.div`
   background: rgba(0, 0, 0, 0.25);
-  padding: 25px 50px;
+  padding: 30px 50px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 
-  @media (max-width: 768px) {
-    padding: 20px 20px;
-    text-align: center;
+  @media (max-width: 992px) {
+    padding: 25px 20px;
   }
 `;
 
 const CopyrightText = styled.div`
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
 
   .company-name {
     color: #4a90e2;
     font-weight: 600;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
   }
 `;
 
 const CertificationBadges = styled.div`
   display: flex;
-  gap: 15px;
+  gap: 12px;
   align-items: center;
-
-  @media (max-width: 768px) {
-    justify-content: center;
-    margin: 15px 0;
-    flex-wrap: wrap;
-  }
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px 0;
 `;
 
 const Badge = styled.div`
   background: rgba(255, 255, 255, 0.08);
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 6px;
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
 
   &:hover {
     background: rgba(74, 144, 226, 0.15);
     border-color: #4a90e2;
+    transform: scale(1.05);
+  }
+`;
+
+// Add this styled component
+const DevelopedBy = styled.div`
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+
+  a {
+    color: #4a90e2;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      text-decoration: underline;
+      color: #357abd;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
   }
 `;
 
@@ -245,89 +269,104 @@ const Footer = () => {
     { path: routeConstant.PRODUCT_500x500, label: "500x500 MM Digital Parking Tiles" },
   ];
 
+  const animationVariant = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+
   return (
     <FooterContainer>
-      <FooterContent>
-        <Row gutter={[40, 40]}>
-          {/* Company Info */}
-          <Col xs={24} sm={12} md={12} lg={6}>
-            <FooterSection>
-              <CompanyLogo>
-                <a href="/">
-                  <img src="./logo.png" height="50" width="50" alt="Luton Ceramic Pvt. Ltd." />
-                </a>
-              </CompanyLogo>
-              <p style={{ color: "rgba(255, 255, 255, 0.8)", lineHeight: "1.6", marginBottom: "20px", fontSize: "1rem" }}>
-                Leading manufacturer of premium digital parking tiles in India. We combine traditional craftsmanship with modern technology to create durable and aesthetic parking solutions.
-              </p>
-              <SocialLinks>
-                <SocialIcon href="https://www.facebook.com/share/1B7dWXs4Tr/" target="_blank" rel="noopener noreferrer">
-                  <FaFacebook />
-                </SocialIcon>
-                <SocialIcon href="https://www.instagram.com/luton_ceramic?igsh=b29ycjltZ2c2aW51" target="_blank" rel="noopener noreferrer">
-                  <FaInstagram />
-                </SocialIcon>
-                <SocialIcon href="#" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin />
-                </SocialIcon>
-              </SocialLinks>
-            </FooterSection>
-          </Col>
+      <Row gutter={[40, 40]}>
+        {/* Company Info */}
+        <Col xs={24} sm={12} md={12} lg={6}>
+          <FooterSection
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            variants={animationVariant}
+          >
+            <CompanyLogo
+              whileHover={{ scale: 1.1, rotate: -3 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <a href="/">
+                <img src="./logo.png" height="50" width="50" alt="Luton Ceramic Pvt. Ltd." />
+              </a>
+            </CompanyLogo>
+            <p style={{ color: "rgba(255, 255, 255, 0.8)", lineHeight: "1.6", marginBottom: "20px", fontSize: "1rem" }}>
+              Leading manufacturer of premium digital parking tiles in India. We combine traditional craftsmanship with modern technology to create durable and aesthetic parking solutions.
+            </p>
+            <SocialLinks>
+              <SocialIcon href="https://www.facebook.com/share/1B7dWXs4Tr/" target="_blank" rel="noopener noreferrer">
+                <FaFacebook />
+              </SocialIcon>
+              <SocialIcon href="https://www.instagram.com/luton_ceramic?igsh=b29ycjltZ2c2aW51" target="_blank" rel="noopener noreferrer">
+                <FaInstagram />
+              </SocialIcon>
+              <SocialIcon href="#" target="_blank" rel="noopener noreferrer">
+                <FaLinkedin />
+              </SocialIcon>
+            </SocialLinks>
+          </FooterSection>
+        </Col>
 
-          {/* Quick Links */}
-          <Col xs={24} sm={12} md={6} lg={4}>
-            <FooterSection>
-              <SectionTitle>Quick Links</SectionTitle>
-              {map(quickLinks, (link, index) => (
-                <QuickLink key={index} to={link.path}>{link.label}</QuickLink>
-              ))}
-            </FooterSection>
-          </Col>
+        {/* Quick Links */}
+        <Col xs={24} sm={12} md={6} lg={4}>
+          <FooterSection initial="hidden" whileInView="visible" viewport={{ once: false }} variants={animationVariant}>
+            <SectionTitle>Quick Links</SectionTitle>
+            {map(quickLinks, (link, index) => (
+              <QuickLink key={index} to={link.path}>{link.label}</QuickLink>
+            ))}
+          </FooterSection>
+        </Col>
 
-          {/* Products */}
-          <Col xs={24} sm={12} md={6} lg={6}>
-            <FooterSection>
-              <SectionTitle>Our Products</SectionTitle>
-              {map(products, (product, index) => (
-                <ProductLink key={index} to={product.path}>{product.label}</ProductLink>
-              ))}
-            </FooterSection>
-          </Col>
+        {/* Products */}
+        <Col xs={24} sm={12} md={6} lg={6}>
+          <FooterSection initial="hidden" whileInView="visible" viewport={{ once: false }} variants={animationVariant}>
+            <SectionTitle>Our Products</SectionTitle>
+            {map(products, (product, index) => (
+              <ProductLink key={index} to={product.path}>{product.label}</ProductLink>
+            ))}
+          </FooterSection>
+        </Col>
 
-          {/* Contact */}
-          <Col xs={24} sm={12} md={12} lg={8}>
-            <FooterSection>
-              <SectionTitle>Contact Us</SectionTitle>
-              <ContactItem>
-                <EnvironmentOutlined />
-                <div>Srv no.555, Morbi-Jetpar Road,<br />Opp. Viratnagar, At Rangpar,<br />Morbi-2 (Gujarat) INDIA</div>
-              </ContactItem>
-              <ContactItem>
-                <PhoneOutlined />
-                <div>{HeaderLang.CONTACT1}<br />{HeaderLang.CONTACT2}</div>
-              </ContactItem>
-              <ContactItem>
-                <MailOutlined />
-                <span>{HeaderLang.EMAIL_VALUE}</span>
-              </ContactItem>
-              <ContactItem>
-                <GlobalOutlined />
-                <span>Export to 10+ Countries</span>
-              </ContactItem>
-            </FooterSection>
-          </Col>
-        </Row>
-      </FooterContent>
+        {/* Contact */}
+        <Col xs={24} sm={12} md={12} lg={8}>
+          <FooterSection initial="hidden" whileInView="visible" viewport={{ once: false }} variants={animationVariant}>
+            <SectionTitle>Contact Us</SectionTitle>
+            <ContactItem>
+              <EnvironmentOutlined />
+              <div>Srv no.555, Morbi-Jetpar Road,<br />Opp. Viratnagar, At Rangpar,<br />Morbi-2 (Gujarat) INDIA</div>
+            </ContactItem>
+            <ContactItem>
+              <PhoneOutlined />
+              <div>{HeaderLang.CONTACT1}<br />{HeaderLang.CONTACT2}</div>
+            </ContactItem>
+            <ContactItem>
+              <MailOutlined />
+              <span>{HeaderLang.EMAIL_VALUE}</span>
+            </ContactItem>
+            <ContactItem>
+              <GlobalOutlined />
+              <span>Export to 10+ Countries</span>
+            </ContactItem>
+          </FooterSection>
+        </Col>
+      </Row>
 
+      {/* Bottom Bar */}
       <BottomBar>
-        <Row justify="space-between" align="middle" gutter={[20, 20]}>
-          <Col xs={24} md={8} style={{ textAlign: "center" }}>
+        <Row justify="space-between" align="middle">
+          {/* Copyright */}
+          <Col xs={24} md={8} style={{ textAlign: "center", marginBottom: "10px" }}>
             <CopyrightText>
-              © 2025 <span className="company-name">Luton Ceramic Pvt. Ltd.</span> All rights reserved. Manufacturing Excellence Since 2016.
+              © 2025 <span className="company-name">Luton Ceramic Pvt. Ltd.</span> All rights reserved.<br />
+              Manufacturing Excellence Since 2016.
             </CopyrightText>
           </Col>
 
-          <Col xs={24} md={8} style={{ textAlign: "center" }}>
+          {/* Certification Badges */}
+          <Col xs={24} md={8} style={{ textAlign: "center", marginBottom: "10px" }}>
             <CertificationBadges>
               <Badge>ISO Certified</Badge>
               <Badge>Export Quality</Badge>
@@ -335,18 +374,18 @@ const Footer = () => {
             </CertificationBadges>
           </Col>
 
-          <Col xs={24} md={8} style={{ textAlign: "center" }}>
-            <ContactInfo>
-              <a href="https://wa.me/919484990960" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}>
-                <ContactItem>DESIGN BY:&nbsp; <StyledIcon component={PhoneFilled} /> Tirth Patoliya</ContactItem>
-              </a>
-              <a href="https://wa.me/916355189178" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}>
-                <ContactItem><StyledIcon component={PhoneFilled} /> Riddhi Patoliya</ContactItem>
-              </a>
-            </ContactInfo>
+          {/* Designers */}
+          <Col xs={24} md={8}>
+            {/* Developed By */}
+            <DevelopedBy>
+              Developed by : &nbsp; 
+              <a href="https://wa.me/919484990960" target="_blank" rel="noopener noreferrer"><PhoneFilled /> Tirth Patoliya</a> & 
+              &nbsp;<a href="https://wa.me/916355189178" target="_blank" rel="noopener noreferrer"><PhoneFilled /> Riddhi Patoliya</a>
+            </DevelopedBy>
           </Col>
         </Row>
       </BottomBar>
+
     </FooterContainer>
   );
 };
