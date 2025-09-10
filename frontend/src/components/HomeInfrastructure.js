@@ -6,78 +6,93 @@ import { routeConstant } from "../config/routeConstant";
 import { ExploreButton } from "./HomeAboutUsSection";
 import { HomePageLang } from "../lang/HomePageLang";
 
-const AboutLutonSection = styled.section`
+const Section = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 0;
-`;
+  padding: 80px 20px;
+  background: #f9fafb;
 
-const AboutLutonInner = styled.div`
-  display: flex;
-  gap: 0;
-  background: transparent;
-  width: 100%;
-  @media (max-width: 900px) {
-    flex-direction: column;
-    align-items: center;
+  @media (max-width: 768px) {
+    padding: 60px 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 12px;
   }
 `;
 
-const AboutImageWrap = styled.div`
-  position: relative;
-  width: 45vw;
+const Inner = styled.div`
+  display: flex;
+  gap: 48px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+
+  @media (max-width: 1024px) {
+    gap: 32px;
+  }
+
   @media (max-width: 900px) {
-    width: 100vw;
-    min-width: unset;
-    max-width: 100vw;
+    flex-direction: column;
+    text-align: center;
+  }
+`;
+
+const ImageWrap = styled.div`
+  position: relative;
+  width: 50%;
+  max-width: 600px;
+
+  @media (max-width: 900px) {
+    width: 100%;
     margin-bottom: 32px;
   }
 `;
 
-const AboutImage = styled.img`
+const Image = styled.img`
   width: 100%;
-  height: 100%;
-  border-radius: 0;
+  height: auto;
   display: block;
-  position: relative;
-  z-index: 2;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
 `;
 
-const AboutContent = styled.div`
+const Content = styled.div`
   flex: 1;
-  background: transparent;
-  padding: 0 0 0 48px;
+  padding: 0 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 600px;
+
   @media (max-width: 900px) {
-    padding: 0 12px;
-    text-align: center;
     align-items: center;
+    padding: 0;
   }
 `;
 
-const AboutLabel = styled.div`
-  font-size: 1.1rem;
-  color: #222;
-  font-weight: 500;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
+const Label = styled.div`
+  font-size: 1rem;
+  color: #555;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+
   &:after {
     content: "";
-    display: inline-block;
-    width: 48px;
+    flex: 1;
     height: 2px;
-    background: #444;
-    margin-left: 12px;
-    vertical-align: middle;
+    background: #ddd;
+    margin-left: 10px;
   }
+
   @media (max-width: 900px) {
     justify-content: center;
     &:after {
@@ -86,29 +101,39 @@ const AboutLabel = styled.div`
   }
 `;
 
-const AboutTitle = styled.h2`
-  font-size: 2.6rem;
+const Title = styled.h2`
+  font-size: 2.4rem;
   font-weight: 700;
-  color: rgb(36, 36, 34);
-  margin-bottom: 18px;
-  letter-spacing: 2px;
-  @media (max-width: 900px) {
+  color: #222;
+  margin-bottom: 20px;
+  line-height: 1.3;
+
+  @media (max-width: 1024px) {
     font-size: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.6rem;
   }
 `;
 
-const AboutDesc = styled.ul`
+const DescList = styled.ul`
   font-size: 1.1rem;
   color: #444;
   margin-bottom: 24px;
-  line-height: 1.8;
+  line-height: 1.7;
   list-style: none;
   padding-left: 0;
 
   li {
     margin-bottom: 12px;
     position: relative;
-    padding-left: 24px;
+    padding-left: 28px;
+    font-weight: 500;
 
     &:before {
       content: "✔";
@@ -117,7 +142,12 @@ const AboutDesc = styled.ul`
       top: 0;
       color: #f8b500;
       font-size: 1rem;
+      font-weight: bold;
     }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
   }
 `;
 
@@ -134,27 +164,37 @@ const HomeInfrastructure = () => {
       viewport={{ once: true }}
       variants={fadeIn}
     >
-      <AboutLutonSection>
-        <AboutLutonInner>
-          <AboutContent>
-            <AboutLabel>{HomePageLang.INFRASRUCTURE}</AboutLabel>
-            <AboutTitle dangerouslySetInnerHTML={{ __html: HomePageLang.INFRASTRUCTURE_DESC }} />
-            <AboutDesc>
+      <Section>
+        <Inner>
+          {/* Left Content */}
+          <Content>
+            <Label>{HomePageLang.INFRASRUCTURE}</Label>
+            <Title
+              dangerouslySetInnerHTML={{
+                __html: HomePageLang.INFRASTRUCTURE_DESC,
+              }}
+            />
+            <DescList>
               <li>{HomePageLang.INFRASTRUCTURE_LINE_1}</li>
               <li>{HomePageLang.INFRASTRUCTURE_LINE_2}</li>
               <li>{HomePageLang.INFRASTRUCTURE_LINE_3}</li>
               <li>{HomePageLang.INFRASTRUCTURE_LINE_4}</li>
               <li>{HomePageLang.INFRASTRUCTURE_LINE_5}</li>
-            </AboutDesc>
+            </DescList>
             <ExploreButton href={routeConstant.INFRASTRUCTURE}>
               {HomePageLang.VIEW_INFRASTRUCTURE}
             </ExploreButton>
-          </AboutContent>
-          <AboutImageWrap>
-            <AboutImage src={INFRASTRUCTURE_IMAGES} alt="Luton Ceramic Pvt. Ltd. Infrastructure" />
-          </AboutImageWrap>
-        </AboutLutonInner>
-      </AboutLutonSection>
+          </Content>
+
+          {/* Right Image */}
+          <ImageWrap>
+            <Image
+              src={INFRASTRUCTURE_IMAGES}
+              alt="Luton Ceramic Pvt. Ltd. Infrastructure"
+            />
+          </ImageWrap>
+        </Inner>
+      </Section>
     </motion.div>
   );
 };
