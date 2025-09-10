@@ -5,7 +5,7 @@ export const AboutPageLang = {
     ABOUT_DESC_2: "As we grew, we invested heavily in precision kilns, automated handling, and quality analytics—delivering consistent surfaces engineered for everyday performance and long-term beauty.",
 
     COMPANY_PROFILE: "Company Profile",
-    COMPANY_PROFILE_DESC_1: "We are Morbi, Gujarat based manufacturer and supplier of major tiles products: 300 x 300 mm Digital Parking tiles. In the very short span of our endeavour, we have won the trust of many clients with our never-before quality preposition. Luton is the company with all the major certification and accreditation. We are also premier company for our best quality products. With the wide range of our products and quality services, we have made our name in the top companies of our sector.",
+    COMPANY_PROFILE_DESC_1: "We are Morbi, Gujarat based manufacturer and supplier of major tiles products: 400 x 400 mm and 500 x 500 mm Digital Parking tiles. In the very short span of our endeavour, we have won the trust of many clients with our never-before quality preposition. Luton is the company with all the major certification and accreditation. We are also premier company for our best quality products. With the wide range of our products and quality services, we have made our name in the top companies of our sector.",
     COMPANY_PROFILE_DESC_2: "We believe that our strength lies within our esteemed dealers, distributors and finally with the end-users. We look forward to gain the same enthusiasm and trust from them.",
 
     INFRASTRUCTURE: "INFRASTRUCTURE",

@@ -145,7 +145,6 @@ const HomeInfrastructure = () => {
               <li>{HomePageLang.INFRASTRUCTURE_LINE_3}</li>
               <li>{HomePageLang.INFRASTRUCTURE_LINE_4}</li>
               <li>{HomePageLang.INFRASTRUCTURE_LINE_5}</li>
-              <li>{HomePageLang.INFRASTRUCTURE_LINE_6}</li>
             </AboutDesc>
             <ExploreButton href={routeConstant.INFRASTRUCTURE}>
               {HomePageLang.VIEW_INFRASTRUCTURE}

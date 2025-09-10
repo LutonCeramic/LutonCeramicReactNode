@@ -10,7 +10,7 @@ export const HomePageLang = {
                 continuous R&D to expand design range and improve durability.
                 With 1000+ designs, flexible finishing options and end‑to‑end
                 technical support, Luton Ceramic Pvt. Ltd. is trusted by architects,
-                contractors and distributors across the Middle East, Africa,
+                contractors and distributors across the Domestic market, Middle East, Africa,
                 South Asia and Latin America for consistent sizing, long‑lasting
                 colour and timely delivery.`,
   EXPLORE_MORE: "EXPLORE MORE",
@@ -61,12 +61,11 @@ export const HomePageLang = {
 
   INFRASRUCTURE: "Infrastructure",
   INFRASTRUCTURE_DESC: `Innovation <br />Becomes Not Merely An Aim,<br />But a Strategy`,
-  INFRASTRUCTURE_LINE_1: "Company has excellent transportation facilities to deliver the products across the world.",
-  INFRASTRUCTURE_LINE_2: "We have best country-wide distribution network, paradoxically all products have single location storage.",
-  INFRASTRUCTURE_LINE_3: "The supremely qualified technical team looks after all technical queries across India.",
-  INFRASTRUCTURE_LINE_4: "We are also proud owners of best depots and warehouses network across India.",
-  INFRASTRUCTURE_LINE_5: "Our supply chain tool is at acme which is segregated as per zones, districts and states.",
-  INFRASTRUCTURE_LINE_6: "We also take up the responsibility of supplying any application related resources for tile fixing across India.",
+  INFRASTRUCTURE_LINE_1: "Building smarter facilities that adapt to tomorrow’s challenges, not just today’s needs.",
+  INFRASTRUCTURE_LINE_2: "Integrating cutting-edge technologies to optimize efficiency and reduce waste.",
+  INFRASTRUCTURE_LINE_3: "Turning innovation into a continuous process, not a one-time achievement.",
+  INFRASTRUCTURE_LINE_4: "Aligning infrastructure with global standards for quality, safety, and sustainability.",
+  INFRASTRUCTURE_LINE_5: "Positioning infrastructure as a growth engine that drives competitiveness.",
   VIEW_INFRASTRUCTURE: "View Infrastructure",
 
   EXPORT: "Export",
