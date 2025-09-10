@@ -18,6 +18,21 @@ const PageTitleSection = styled.section`
   padding: 40px 20px;
   color: #fff;
   overflow: hidden;
+
+  @media (max-width: 1024px) {
+    min-height: 50vh;
+    padding: 35px 18px;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 45vh;
+    padding: 30px 16px;
+  }
+
+  @media (max-width: 480px) {
+    min-height: 35vh;
+    padding: 24px 12px;
+  }
 `;
 
 const Overlay = styled.div`
@@ -31,6 +46,22 @@ const Overlay = styled.div`
   display: flex;
   align-items: flex-end;
   padding: 50px 40px;
+
+  @media (max-width: 1024px) {
+    width: 40%;
+    padding: 40px 30px;
+  }
+
+  @media (max-width: 768px) {
+    width: 60%;
+    padding: 30px 20px;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 20px 12px;
+    align-items: center;
+  }
 `;
 
 const Container = styled.div`
@@ -40,6 +71,10 @@ const Container = styled.div`
   position: relative;
   z-index: 2;
   animation: ${fadeInUp} 1s ease-in-out;
+
+  @media (max-width: 480px) {
+    text-align: center;
+  }
 `;
 
 const Title = styled.h1`
@@ -55,13 +90,35 @@ const Title = styled.h1`
     color: #ffffff;
     text-shadow: 0px 0px 20px #ffcc00;
   }
+
+  @media (max-width: 1024px) {
+    font-size: 48px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+  }
 `;
 
 const StyledBreadcrumb = styled(Breadcrumb)`
   .ant-breadcrumb-link,
   .ant-breadcrumb-separator {
     color: #fff !important;
+    font-size: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.85rem;
+    }
   }
+
   .ant-breadcrumb-link a {
     color: #ffcc00 !important;
     text-decoration: none;
@@ -75,21 +132,19 @@ const StyledBreadcrumb = styled(Breadcrumb)`
 
 const MainImgBlock = ({ title = "", imgLink = "" }) => {
   return (
-    <>
-      <PageTitleSection bgImage={imgLink}>
-        <Overlay>
-          <Container>
-            <Title>{title}</Title>
-            <StyledBreadcrumb separator="/">
-              <Breadcrumb.Item>
-                <a href={routeConstant.HOME}>{HeaderLang.HOME}</a>
-              </Breadcrumb.Item>
-              <Breadcrumb.Item>{title}</Breadcrumb.Item>
-            </StyledBreadcrumb>
-          </Container>
-        </Overlay>
-      </PageTitleSection>
-    </>
+    <PageTitleSection bgImage={imgLink}>
+      <Overlay>
+        <Container>
+          <Title>{title}</Title>
+          <StyledBreadcrumb separator="/">
+            <Breadcrumb.Item>
+              <a href={routeConstant.HOME}>{HeaderLang.HOME}</a>
+            </Breadcrumb.Item>
+            <Breadcrumb.Item>{title}</Breadcrumb.Item>
+          </StyledBreadcrumb>
+        </Container>
+      </Overlay>
+    </PageTitleSection>
   );
 };
 
