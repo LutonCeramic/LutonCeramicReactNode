@@ -75,41 +75,41 @@ const SlideImage = styled(motion.img)`
   animation: ${kenBurns} 15s ease-in-out infinite;
 `;
 
-// Text overlay
+// Bottom-left text overlay
 const SlideContent = styled(motion.div)`
   position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-  color: white;
+  bottom: 200px;
+  left: 40px;
+  color: white !important;
   z-index: 2;
-  text-align: center;
-  max-width: 700px;
-  padding: 0 20px;
+  max-width: 500px;
+  padding: 10px;
 
   h1 {
-    font-size: 52px;
-    margin-bottom: 15px;
+    font-size: 42px;
+    margin-bottom: 10px;
     font-weight: 700;
+    color: #ffffff;
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.6);
   }
 
   p {
     font-size: 20px;
-    margin-bottom: 30px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 20px;
     text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
   }
 
   .buttons {
     display: flex;
-    justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 12px;
 
     button {
       font-weight: 600;
-      padding: 14px 32px;
-      font-size: 16px;
+      padding: 12px 28px;
+      font-size: 14px;
       transition: all 0.3s ease;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
       border: none;
@@ -138,44 +138,37 @@ const SlideContent = styled(motion.div)`
   }
 
   @media (max-width: 768px) {
-    top: 35%;
+    bottom: 150px;
+    left: 20px;
     h1 {
-      font-size: 34px;
+      font-size: 32px;
     }
     p {
       font-size: 16px;
     }
     .buttons button {
-      padding: 12px 24px;
-      font-size: 14px;
+      padding: 10px 24px;
+      font-size: 13px;
     }
   }
 
   @media (max-width: 480px) {
-    top: 30%;
+    bottom: 100px;
+    left: 15px;
     h1 {
-      font-size: 26px;
+      font-size: 24px;
     }
     p {
       font-size: 14px;
     }
     .buttons {
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
     .buttons button {
       width: 100%;
-      white-space: normal; /* Allow text to wrap */
-      word-wrap: break-word;
-      font-size: 14px;
-      padding: 12px 16px;
-    }
-  }
-
-  @media (max-width: 360px) {
-    .buttons button {
       font-size: 13px;
-      padding: 10px 12px;
+      padding: 10px 14px;
     }
   }
 `;
@@ -209,34 +202,31 @@ const HomeSlider = () => {
             />
             <SlideContent
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1, delay: 0.3 }}
             >
-              <h1>{item.title}</h1>
-              <p>{item.subtitle}</p>
+              <h1>{item.bottomLeftTitle}</h1>
+              <p>{item.bottomLeftSubtitle}</p>
               <div className="buttons">
-                <Button
-                  className="primary-btn"
-                  size="large"
-                  onClick={() =>
-                    window.open(
-                      "/catalogues/E_CATALOGUE_13_06_2025.pdf",
-                      "_blank",
-                      "noopener,noreferrer"
-                    )
-                  }
-                >
-                  Download E-Catalogue
-                </Button>
-                <Button
-                  className="secondary-btn"
-                  size="large"
-                  onClick={() =>
-                    window.open(item.productLink, "_blank", "noopener,noreferrer")
-                  }
-                >
-                  Visit Product Catalogue
-                </Button>
+                {item.downloadLink && (
+                  <Button
+                    className="primary-btn"
+                    size="large"
+                    onClick={() => window.open(item.downloadLink, "_blank", "noopener,noreferrer")}
+                  >
+                    Download E-Catalogue
+                  </Button>
+                )}
+                {item.productLink && (
+                  <Button
+                    className="secondary-btn"
+                    size="large"
+                    onClick={() => window.open(item.productLink, "_blank", "noopener,noreferrer")}
+                  >
+                    Visit Product Catalogue
+                  </Button>
+                )}
               </div>
             </SlideContent>
           </SlideImageWrapper>

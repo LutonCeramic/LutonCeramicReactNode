@@ -5,6 +5,7 @@ import { map } from "lodash";
 import MainImgBlock from "../pages/MainImgBlock";
 import { CatalogueLang } from "../lang/CatalogueLang";
 import { CollectionCard, CollectionGrid, DownloadIcon, PageContainer, SectionTitle } from "./Catalogue400x400Page";
+import CatalogueCollection from "./CatalogueCollection";
 
 const Catalogue500x500Page = () => {
   const handleDownload = (filePath) => {
@@ -58,6 +59,7 @@ const Catalogue500x500Page = () => {
           </Row>
         </CollectionGrid>
       </PageContainer>
+      <CatalogueCollection current={CatalogueLang.CATALOGUE_2}/>
     </>
   );
 };

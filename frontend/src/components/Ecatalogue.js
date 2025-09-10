@@ -11,6 +11,7 @@ import {
   PageContainer,
   SectionTitle,
 } from "./Catalogue400x400Page";
+import CatalogueCollection from "./CatalogueCollection";
 
 const Ecatalogue = () => {
   const handleDownload = (filePath) => {
@@ -64,6 +65,7 @@ const Ecatalogue = () => {
           </Row>
         </CollectionGrid>
       </PageContainer>
+      <CatalogueCollection current={CatalogueLang.E_CATALOGUE}/>
     </>
   );
 };

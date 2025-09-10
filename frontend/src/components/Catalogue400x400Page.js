@@ -7,6 +7,7 @@ import { CATALOUGE_COLLECTION_400_400 } from "../config/Constant";
 import { map } from "lodash";
 import MainImgBlock from "../pages/MainImgBlock";
 import { CatalogueLang } from "../lang/CatalogueLang";
+import CatalogueCollection from "./CatalogueCollection";
 
 export const PageContainer = styled.div`
   min-height: 100vh;
@@ -147,6 +148,7 @@ const Catalogue400x400Page = () => {
           </Row>
         </CollectionGrid>
       </PageContainer>
+      <CatalogueCollection current={CatalogueLang.CATALOGUE_1} />
     </>
   );
 };

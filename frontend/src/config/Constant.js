@@ -1,3 +1,4 @@
+import { CatalogueLang } from "../lang/CatalogueLang";
 import { HomePageLang } from "../lang/HomePageLang";
 import { ProductPageLang } from "../lang/ProductPageLang";
 import { routeConstant } from "./routeConstant";
@@ -213,6 +214,24 @@ export const COLLECTION_ITEM = [
     title: ProductPageLang.PRODUCT_2,
     link: routeConstant.PRODUCT_500x500,
   },
+];
+
+export const CATALOGUE_ITEM = [
+  {
+    img: "/catalogues/plainCollection.jpg",
+    title: CatalogueLang.CATALOGUE_1,
+    link: routeConstant.CATALOGUE_400X400,
+  },
+  {
+    img: "/catalogues/punchSeries.png",
+    title: CatalogueLang.CATALOGUE_2,
+    link: routeConstant.CATALOGUE_500X500,
+  },
+  {
+    img: "/catalogues/eCatalogue.png",
+    title: CatalogueLang.E_CATALOGUE,
+    link: routeConstant.E_CATALOGUE,
+  },  
 ];
 
 export const EXPORT_MAIN = "/exportNetwork/exportMain.webp";
@@ -1235,8 +1254,32 @@ export const PRODUCT_400_400 = [
 ];
 
 export const SLIDES = [
-  { img: "/slider/slider3.jpg" },
-  { img: "/slider/slider2.jpg" },
-  { img: "/slider/slider10.jpg" },
-  { img: "/slider/slider4.jpg" },
+  {
+    img: "/slider/slider3.jpg",
+    bottomLeftTitle: "WE ARE MANUFACTURING",
+    bottomLeftSubtitle: "Heavy Duty Virtified Digital Parking Tiles 400x400 mm & 500x500 mm",
+    downloadLink: "/catalogues/E_CATALOGUE_13_06_2025.pdf",
+    productLink: routeConstant.CATALOGUE_400X400
+  },
+  {
+    img: "/slider/slider2.jpg",
+    bottomLeftTitle: "Global Export",
+    bottomLeftSubtitle: "Reaching every corner of the world",
+    downloadLink: "/catalogues/E_CATALOGUE_13_06_2025.pdf",
+    productLink: routeConstant.CATALOGUE_400X400
+  },
+  {
+    img: "/slider/slider10.jpg",
+    bottomLeftTitle: "Premium Quality",
+    bottomLeftSubtitle: "Top-notch materials and craftsmanship",
+    downloadLink: "/catalogues/E_CATALOGUE_13_06_2025.pdf",
+    productLink: "/products/global-export"
+  },
+  {
+    img: "/slider/slider4.jpg",
+    bottomLeftTitle: "Sustainable Innovation",
+    bottomLeftSubtitle: "Eco-friendly and efficient solutions",
+    downloadLink: "/catalogues/E_CATALOGUE_13_06_2025.pdf",
+    productLink: "/products/premium-quality"
+  }
 ];
